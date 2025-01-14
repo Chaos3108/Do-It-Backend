@@ -5,6 +5,7 @@ const app = express();
 app.use(express.json());
 
 const authRouter = require('./routes/authRoute');
+const taskRouter = require('./routes/taskRoute')
 const connectDB = require('./db');
 
 
@@ -16,6 +17,7 @@ app.get('/', function(req,res){
 })
 
 app.use('/user',authRouter)
+app.use('/',taskRouter)
 connectDB();
 
 
